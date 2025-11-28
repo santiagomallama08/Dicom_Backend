@@ -48,14 +48,14 @@ async def error_handler(request: Request, call_next):
         )
 
 
-# ============ CORS ============
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # ============ Archivos estáticos ============
 static_path = Path("api/static")
